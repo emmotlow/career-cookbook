@@ -65,7 +65,15 @@ export default function AuthorNote() {
             </p>
           </div>
 
-          <p className="mt-10 text-charcoal/50 font-serif text-base">
+          <div className="mt-10 mb-4 mx-auto w-20 h-20 rounded-full overflow-hidden">
+            <img
+              src="/images/chef3_opengraph.png"
+              alt="Erin Motlow"
+              className="w-full h-full object-cover scale-110 origin-top-left"
+            />
+          </div>
+
+          <p className="text-charcoal/50 font-serif text-base">
             &mdash; Erin
           </p>
 
