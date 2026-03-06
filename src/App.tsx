@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Introduction from './components/Introduction';
 import KitchenPhilosophy from './components/KitchenPhilosophy';
+import AuthorNote from './components/AuthorNote';
 import RecipeGallery from './components/RecipeGallery';
 import NamaFijiSection from './components/NamaFijiSection';
 import Contact from './components/Contact';
@@ -19,6 +20,7 @@ function App() {
       <Hero />
       <Introduction />
       <KitchenPhilosophy />
+      <AuthorNote />
       <RecipeGallery
         recipes={recipes}
         onSelectRecipe={setSelectedRecipe}
