@@ -41,8 +41,8 @@ export default function OffMenuPage() {
       </section>
 
       {/* Story content */}
-      <section className="relative py-20 md:py-28 bg-terracotta overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-terracotta to-terracotta-dark" />
+      <section className="relative py-20 md:py-28 bg-charcoal overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal to-[#1E1E1E]" />
         <div className="section-container relative z-10">
           <motion.div
             className="max-w-3xl mx-auto"
@@ -245,7 +245,7 @@ export default function OffMenuPage() {
               </div>
             </div>
 
-            <div className="w-16 h-px bg-cream/30 mx-auto mb-12" />
+            <div className="w-16 h-px bg-cream/20 mx-auto mb-12" />
 
             {/* Would I / Do I */}
             <div className="text-center mb-12 space-y-4">

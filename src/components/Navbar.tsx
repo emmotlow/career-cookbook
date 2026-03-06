@@ -13,7 +13,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { scrollY } = useScroll();
   const location = useLocation();
-  const isOffMenu = location.pathname === '/off-menu';
+  const isHome = location.pathname === '/';
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setScrolled(latest > 50);
@@ -38,28 +38,40 @@ export default function Navbar() {
     setMobileOpen(false);
   };
 
-  const linkClass = (isPage?: boolean) =>
+  const linkClass =
     `font-sans text-xs tracking-extra-wide uppercase transition-colors duration-300 hover:text-terracotta ${
-      isOffMenu
-        ? isPage
-          ? 'text-cream/90'
-          : 'text-cream/70'
-        : scrolled
-          ? 'text-charcoal/60'
-          : 'text-cream/70'
+      scrolled ? 'text-charcoal/60' : 'text-cream/70'
     }`;
+
+  const renderLink = (link: typeof navLinks[number], onClick?: () => void) => {
+    if (link.isPage) {
+      return (
+        <Link to={link.href} className={linkClass} onClick={onClick}>
+          {link.label}
+        </Link>
+      );
+    }
+    if (!isHome) {
+      return (
+        <Link to={`/${link.href}`} className={linkClass} onClick={onClick}>
+          {link.label}
+        </Link>
+      );
+    }
+    return (
+      <a href={link.href} className={linkClass} onClick={onClick}>
+        {link.label}
+      </a>
+    );
+  };
 
   return (
     <>
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isOffMenu
-            ? scrolled
-              ? 'bg-terracotta border-b border-cream/10'
-              : 'bg-transparent'
-            : scrolled
-              ? 'bg-[#FAF9F6] border-b border-charcoal/[0.06]'
-              : 'bg-transparent'
+          scrolled
+            ? 'bg-[#FAF9F6] border-b border-charcoal/[0.06]'
+            : 'bg-transparent'
         }`}
         initial={{ y: 0 }}
         animate={{ y: 0 }}
@@ -69,14 +81,10 @@ export default function Navbar() {
           <Link
             to="/"
             className={`font-display text-lg font-bold tracking-wide transition-colors duration-500 ${
-              isOffMenu
-                ? 'text-cream'
-                : scrolled
-                  ? 'text-charcoal'
-                  : 'text-cream'
+              scrolled ? 'text-charcoal' : 'text-cream'
             }`}
           >
-            <span className={isOffMenu ? 'text-cream' : 'text-terracotta'}>Career Cookbook</span>{' '}
+            <span className="text-terracotta">Career Cookbook</span>{' '}
             <span className="hidden sm:inline italic font-normal">by Erin Motlow</span>
           </Link>
 
@@ -84,28 +92,7 @@ export default function Navbar() {
           <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.href}>
-                {link.isPage ? (
-                  <Link
-                    to={link.href}
-                    className={linkClass(link.isPage)}
-                  >
-                    {link.label}
-                  </Link>
-                ) : isOffMenu ? (
-                  <Link
-                    to={`/${link.href}`}
-                    className={linkClass()}
-                  >
-                    {link.label}
-                  </Link>
-                ) : (
-                  <a
-                    href={link.href}
-                    className={linkClass()}
-                  >
-                    {link.label}
-                  </a>
-                )}
+                {renderLink(link)}
               </li>
             ))}
             <li>
@@ -127,17 +114,17 @@ export default function Navbar() {
           >
             <span
               className={`absolute h-px w-5 transition-all duration-300 ${
-                isOffMenu || !scrolled ? 'bg-cream' : 'bg-charcoal'
+                scrolled ? 'bg-charcoal' : 'bg-cream'
               } ${mobileOpen ? 'rotate-45' : '-translate-y-1.5'}`}
             />
             <span
               className={`absolute h-px w-5 transition-all duration-300 ${
-                isOffMenu || !scrolled ? 'bg-cream' : 'bg-charcoal'
+                scrolled ? 'bg-charcoal' : 'bg-cream'
               } ${mobileOpen ? 'opacity-0' : 'opacity-100'}`}
             />
             <span
               className={`absolute h-px w-5 transition-all duration-300 ${
-                isOffMenu || !scrolled ? 'bg-cream' : 'bg-charcoal'
+                scrolled ? 'bg-charcoal' : 'bg-cream'
               } ${mobileOpen ? '-rotate-45' : 'translate-y-1.5'}`}
             />
           </button>
@@ -162,31 +149,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: i * 0.08 }}
                 >
-                  {link.isPage ? (
-                    <Link
-                      to={link.href}
-                      className="font-sans text-sm tracking-extra-wide uppercase text-cream/80 hover:text-terracotta transition-colors duration-300"
-                      onClick={handleLinkClick}
-                    >
-                      {link.label}
-                    </Link>
-                  ) : isOffMenu ? (
-                    <Link
-                      to={`/${link.href}`}
-                      className="font-sans text-sm tracking-extra-wide uppercase text-cream/80 hover:text-terracotta transition-colors duration-300"
-                      onClick={handleLinkClick}
-                    >
-                      {link.label}
-                    </Link>
-                  ) : (
-                    <a
-                      href={link.href}
-                      className="font-sans text-sm tracking-extra-wide uppercase text-cream/80 hover:text-terracotta transition-colors duration-300"
-                      onClick={handleLinkClick}
-                    >
-                      {link.label}
-                    </a>
-                  )}
+                  {renderLink(link, handleLinkClick)}
                 </motion.li>
               ))}
               <motion.li

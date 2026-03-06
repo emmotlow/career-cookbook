@@ -8,43 +8,45 @@ import RecipeCard from './RecipeCard';
 
 function OffMenuCard() {
   return (
-    <motion.div
-      className="mt-6"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.4 }}
-    >
-      <Link to="/off-menu" className="block">
-        <motion.article
-          className="group cursor-pointer bg-cream border border-charcoal/[0.06] overflow-hidden hover:shadow-xl transition-all duration-500 flex flex-col sm:flex-row"
-          whileHover={{ y: -4 }}
-          transition={{ duration: 0.3 }}
-        >
-          {/* Image */}
-          <div className="aspect-[16/9] sm:aspect-auto sm:w-2/5 bg-gradient-to-br from-terracotta/20 to-charcoal/20 relative overflow-hidden flex-shrink-0">
-            <div className="absolute top-4 left-4">
-              <span className="px-3 py-1.5 text-[10px] font-sans font-semibold tracking-wider uppercase bg-terracotta text-cream">
-                Off Menu
-              </span>
-            </div>
-          </div>
-
-          {/* Content */}
-          <div className="p-6 sm:p-8 flex flex-col justify-center flex-1">
-            <h3 className="text-xl sm:text-2xl font-display font-bold text-charcoal mb-2 group-hover:text-terracotta transition-colors duration-300 leading-tight">
-              When the Dish Doesn&apos;t Turn Out
-            </h3>
-            <p className="text-charcoal/50 font-serif italic text-sm sm:text-base mb-5">
-              Here&apos;s what I learned when mine didn&apos;t.
-            </p>
-            <span className="text-terracotta font-sans text-xs font-semibold tracking-wider uppercase">
-              Read the Story &rarr;
+    <Link to="/off-menu" className="block h-full">
+      <motion.article
+        className="group cursor-pointer bg-cream border border-charcoal/[0.06] overflow-hidden hover:shadow-xl transition-all duration-500 h-full flex flex-col"
+        whileHover={{ y: -4 }}
+        transition={{ duration: 0.3 }}
+      >
+        {/* Image */}
+        <div className="aspect-[16/9] bg-gradient-to-br from-terracotta/20 to-charcoal/20 relative overflow-hidden flex-shrink-0">
+          <div className="absolute top-4 left-4">
+            <span className="px-3 py-1.5 text-[10px] font-sans font-semibold tracking-wider uppercase bg-terracotta text-cream">
+              Off Menu
             </span>
           </div>
-        </motion.article>
-      </Link>
-    </motion.div>
+          <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/[0.03] transition-colors duration-500" />
+        </div>
+
+        {/* Content */}
+        <div className="p-6 flex flex-col flex-1">
+          <p className="text-sage-dark font-sans text-[10px] tracking-extra-wide uppercase mb-3">
+            Entrepreneurial DNA
+          </p>
+          <h3 className="text-xl font-display font-bold text-charcoal mb-2 group-hover:text-terracotta transition-colors duration-300 leading-tight line-clamp-2 min-h-[2.5rem]">
+            When the Dish Doesn&apos;t Turn Out
+          </h3>
+          <p className="text-charcoal/50 font-serif italic text-sm mb-3">
+            Nama Fiji
+          </p>
+          <p className="text-charcoal/40 text-sm leading-relaxed line-clamp-2 mb-5 flex-1">
+            Here&apos;s what I learned when mine didn&apos;t.
+          </p>
+          <div className="flex items-center justify-between text-[10px] font-sans text-charcoal/40 border-t border-charcoal/[0.06] pt-4 uppercase tracking-wider mt-auto">
+            <span></span>
+            <span className="text-terracotta font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              Read Story &rarr;
+            </span>
+          </div>
+        </div>
+      </motion.article>
+    </Link>
   );
 }
 
@@ -104,17 +106,28 @@ export default function RecipeGallery({ recipes, onSelectRecipe }: RecipeGallery
                 <RecipeCard recipe={recipe} onSelect={onSelectRecipe} />
               </motion.div>
             ))}
+            {/* Off Menu card */}
+            {activeCategory === 'All' && (
+              <motion.div
+                key="off-menu"
+                className="h-full"
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+              >
+                <OffMenuCard />
+              </motion.div>
+            )}
           </AnimatePresence>
         </motion.div>
 
-        {filteredRecipes.length === 0 && (
+        {filteredRecipes.length === 0 && activeCategory !== 'All' && (
           <p className="text-center text-charcoal/40 py-12 font-serif italic">
             No recipes in this category yet.
           </p>
         )}
-
-        {/* Off Menu card */}
-        {activeCategory === 'All' && <OffMenuCard />}
       </div>
     </section>
   );
