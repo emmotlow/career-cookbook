@@ -205,6 +205,8 @@ That's what led us to eventually adopt Pact's agentic AI in 2024 and solve the c
     dish: 'Agentic Orchestration (Everything in its Place)',
     image: '/images/mise-en-place.jpg',
     serves: 'Internal teams who need systems not based on heroics',
+    prepTime: '1 month',
+    cookTime: '2 months',
     ingredients: [
       'Support tickets (business critical)',
       'Cross-functional teams (all need alignment)',
