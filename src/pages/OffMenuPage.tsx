@@ -129,8 +129,8 @@ export default function OffMenuPage() {
                 </p>
                 <p>
                   With limited inventory in the States and an uncertain world, I made
-                  the hard decision to reduce down to bare-bones operations and ride it
-                  out.
+                  the hard decision to reduce down to bare-bones operations and ride
+                  out the COVID pandemic.
                 </p>
               </div>
             </div>
