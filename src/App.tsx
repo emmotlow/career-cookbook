@@ -1,0 +1,36 @@
+import { useState } from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Introduction from './components/Introduction';
+import KitchenPhilosophy from './components/KitchenPhilosophy';
+import RecipeGallery from './components/RecipeGallery';
+import NamaFijiSection from './components/NamaFijiSection';
+import Contact from './components/Contact';
+import RecipeModal from './components/RecipeModal';
+import { recipes } from './data/recipes';
+import type { Recipe } from './types/recipe';
+
+function App() {
+  const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
+
+  return (
+    <div className="min-h-screen bg-cream">
+      <Navbar />
+      <Hero />
+      <Introduction />
+      <KitchenPhilosophy />
+      <RecipeGallery
+        recipes={recipes}
+        onSelectRecipe={setSelectedRecipe}
+      />
+      <NamaFijiSection />
+      <Contact />
+      <RecipeModal
+        recipe={selectedRecipe}
+        onClose={() => setSelectedRecipe(null)}
+      />
+    </div>
+  );
+}
+
+export default App;
