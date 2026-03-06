@@ -66,7 +66,7 @@ export default function Introduction() {
                 />
               </div>
               {/* Decorative offset border */}
-              <div className="absolute -bottom-3 -right-3 w-full h-full border border-gold/20 -z-10" />
+              <div className="absolute -bottom-3 -right-3 w-full h-full border border-gold/20 -z-10 hidden md:block" />
             </div>
 
             {/* Pull quote below image */}

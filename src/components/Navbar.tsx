@@ -59,7 +59,7 @@ export default function Navbar() {
             }}
           >
             <span className="text-terracotta">Career Cookbook</span>{' '}
-            <span>by Erin Motlow</span>
+            <span className="hidden sm:inline">by Erin Motlow</span>
           </a>
 
           {/* Desktop links */}

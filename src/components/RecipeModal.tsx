@@ -84,7 +84,7 @@ export default function RecipeModal({ recipe, onClose }: RecipeModalProps) {
               </button>
 
               {/* Header */}
-              <div className="p-8 md:p-12 pb-0">
+              <div className="p-5 sm:p-8 md:p-12 pb-0">
                 <span className="inline-block px-3 py-1 rounded-sm text-xs font-sans font-semibold tracking-wider uppercase bg-terracotta/10 text-terracotta mb-4">
                   {recipe.category}
                 </span>
@@ -152,7 +152,7 @@ export default function RecipeModal({ recipe, onClose }: RecipeModalProps) {
 
               {/* Team */}
               {recipe.team && recipe.team.length > 0 && (
-                <div className="px-8 md:px-12 pt-8">
+                <div className="px-5 sm:px-8 md:px-12 pt-8">
                   <h3 className="text-lg font-sans font-bold text-charcoal mb-4 pb-2 border-b border-charcoal/10">
                     The Team
                   </h3>
@@ -168,7 +168,7 @@ export default function RecipeModal({ recipe, onClose }: RecipeModalProps) {
               )}
 
               {/* Ingredients */}
-              <div className="px-8 md:px-12 py-8">
+              <div className="px-5 sm:px-8 md:px-12 py-8">
                 <h3 className="text-lg font-sans font-bold text-charcoal mb-4 pb-2 border-b border-charcoal/10">
                   Ingredients
                 </h3>
@@ -183,7 +183,7 @@ export default function RecipeModal({ recipe, onClose }: RecipeModalProps) {
               </div>
 
               {/* Key Technique */}
-              <div className="px-8 md:px-12 pb-8">
+              <div className="px-5 sm:px-8 md:px-12 pb-8">
                 <h3 className="text-lg font-sans font-bold text-charcoal mb-3">
                   Key Technique
                 </h3>
@@ -204,7 +204,7 @@ export default function RecipeModal({ recipe, onClose }: RecipeModalProps) {
               </div>
 
               {/* The Inflection Point */}
-              <div className="mx-8 md:mx-12 mb-8 p-6 bg-sage/10 border-l-4 border-sage rounded-sm">
+              <div className="mx-5 sm:mx-8 md:mx-12 mb-8 p-4 sm:p-6 bg-sage/10 border-l-4 border-sage rounded-sm">
                 <p className="text-xs font-sans font-semibold tracking-wider uppercase text-sage-dark mb-2">
                   The Inflection Point
                 </p>
@@ -214,7 +214,7 @@ export default function RecipeModal({ recipe, onClose }: RecipeModalProps) {
               </div>
 
               {/* Personal Story */}
-              <div className="px-8 md:px-12 pb-8">
+              <div className="px-5 sm:px-8 md:px-12 pb-8">
                 <h3 className="text-lg font-sans font-bold text-charcoal mb-4 pb-2 border-b border-charcoal/10">
                   My Personal Story
                 </h3>
@@ -227,7 +227,7 @@ export default function RecipeModal({ recipe, onClose }: RecipeModalProps) {
 
               {/* Technique Notes */}
               {recipe.techniqueNotes && recipe.techniqueNotes.length > 0 && (
-                <div className="px-8 md:px-12 pb-8">
+                <div className="px-5 sm:px-8 md:px-12 pb-8">
                   <h3 className="text-lg font-sans font-bold text-charcoal mb-3">
                     Technique Notes
                   </h3>
@@ -243,7 +243,7 @@ export default function RecipeModal({ recipe, onClose }: RecipeModalProps) {
               )}
 
               {/* Result */}
-              <div className="mx-8 md:mx-12 mb-8 p-6 bg-gold/10 border-l-4 border-gold rounded-sm">
+              <div className="mx-5 sm:mx-8 md:mx-12 mb-8 p-4 sm:p-6 bg-gold/10 border-l-4 border-gold rounded-sm">
                 <p className="text-xs font-sans font-semibold tracking-wider uppercase text-gold mb-2">
                   Result
                 </p>
@@ -265,7 +265,7 @@ export default function RecipeModal({ recipe, onClose }: RecipeModalProps) {
 
               {/* Why It Worked */}
               {recipe.whyItWorked && recipe.whyItWorked.length > 0 && (
-                <div className="px-8 md:px-12 pb-8">
+                <div className="px-5 sm:px-8 md:px-12 pb-8">
                   <h3 className="text-lg font-sans font-bold text-charcoal mb-3">
                     Why It Worked
                   </h3>
@@ -281,7 +281,7 @@ export default function RecipeModal({ recipe, onClose }: RecipeModalProps) {
               )}
 
               {/* Back link */}
-              <div className="px-8 md:px-12 pb-8 md:pb-12 text-center">
+              <div className="px-5 sm:px-8 md:px-12 pb-8 md:pb-12 text-center">
                 <button
                   onClick={onClose}
                   className="text-terracotta font-sans text-sm font-semibold tracking-wider uppercase hover:text-terracotta-dark transition-colors"

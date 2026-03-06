@@ -31,7 +31,7 @@ export default function Hero() {
         style={{ opacity }}
       >
         <motion.h1
-          className="text-6xl md:text-8xl lg:text-9xl font-display font-bold text-charcoal mb-6 leading-[0.9] tracking-tight"
+          className="text-[2.75rem] sm:text-6xl md:text-8xl lg:text-9xl font-display font-bold text-charcoal mb-6 leading-[0.9] tracking-tight"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}

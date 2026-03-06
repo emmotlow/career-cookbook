@@ -77,7 +77,7 @@ export default function Contact() {
               Colophon ↗
             </button>
             {colophonOpen && (
-              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-72 bg-cream border border-charcoal/10 shadow-xl rounded-sm p-6 text-left z-50">
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-[calc(100vw-3rem)] sm:w-72 bg-cream border border-charcoal/10 shadow-xl rounded-sm p-6 text-left z-50">
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-cream" />
                 <p className="font-sans text-[10px] tracking-widest uppercase text-charcoal/40 mb-3">
                   Built with
