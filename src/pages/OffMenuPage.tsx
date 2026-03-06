@@ -14,25 +14,24 @@ export default function OffMenuPage() {
       <Navbar />
 
       {/* Hero header */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-terracotta overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-terracotta to-terracotta-dark" />
-        <div className="section-container relative z-10">
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-cream">
+        <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-4 mb-8">
-              <div className="h-px w-12 bg-cream/40" />
-              <p className="text-cream/60 font-sans text-xs tracking-extra-wide uppercase">
+              <div className="h-px w-12 bg-terracotta" />
+              <p className="text-terracotta font-sans text-xs tracking-extra-wide uppercase">
                 Off Menu
               </p>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-cream mb-6 leading-[1.05] max-w-2xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-charcoal mb-6 leading-[1.05] max-w-2xl">
               When the Dish Doesn&apos;t{' '}
-              <span className="italic font-normal text-cream/70">Turn Out</span>
+              <span className="italic font-normal text-terracotta">Turn Out</span>
             </h1>
-            <p className="text-cream/50 max-w-xl leading-relaxed font-serif italic text-lg">
+            <p className="text-charcoal/50 max-w-xl leading-relaxed font-serif italic text-lg">
               &ldquo;The best cooks aren&apos;t the ones who never fail.
               They&apos;re the ones who keep cooking anyway.&rdquo;
             </p>
@@ -41,8 +40,8 @@ export default function OffMenuPage() {
       </section>
 
       {/* Story content */}
-      <section className="relative py-20 md:py-28 bg-charcoal overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-charcoal to-[#1E1E1E]" />
+      <section className="relative py-20 md:py-28 bg-terracotta overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-terracotta to-terracotta-dark" />
         <div className="section-container relative z-10">
           <motion.div
             className="max-w-3xl mx-auto"
@@ -245,7 +244,7 @@ export default function OffMenuPage() {
               </div>
             </div>
 
-            <div className="w-16 h-px bg-cream/20 mx-auto mb-12" />
+            <div className="w-16 h-px bg-cream/30 mx-auto mb-12" />
 
             {/* Would I / Do I */}
             <div className="text-center mb-12 space-y-4">
