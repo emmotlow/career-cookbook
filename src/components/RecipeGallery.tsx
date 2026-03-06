@@ -16,6 +16,12 @@ function OffMenuCard() {
       >
         {/* Image */}
         <div className="aspect-[16/9] bg-gradient-to-br from-terracotta/20 to-charcoal/20 relative overflow-hidden flex-shrink-0">
+          <img
+            src="/images/offmenu.png"
+            alt="The Failure"
+            className="absolute inset-0 w-full h-full object-cover scale-110 origin-top-left"
+            loading="lazy"
+          />
           <div className="absolute top-4 left-4">
             <span className="px-3 py-1.5 text-[10px] font-sans font-semibold tracking-wider uppercase bg-terracotta text-cream">
               Off Menu
@@ -30,10 +36,10 @@ function OffMenuCard() {
             Entrepreneurial DNA
           </p>
           <h3 className="text-xl font-display font-bold text-charcoal mb-2 group-hover:text-terracotta transition-colors duration-300 leading-tight line-clamp-2 min-h-[2.5rem]">
-            When the Dish Doesn&apos;t Turn Out
+            The Failure
           </h3>
           <p className="text-charcoal/50 font-serif italic text-sm mb-3">
-            Nama Fiji
+            When the Dish Doesn&apos;t Turn Out
           </p>
           <p className="text-charcoal/40 text-sm leading-relaxed line-clamp-2 mb-5 flex-1">
             Here&apos;s what I learned when mine didn&apos;t.
