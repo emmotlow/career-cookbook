@@ -65,17 +65,12 @@ export default function AuthorNote() {
             </p>
           </div>
 
-          <div className="mt-10 flex items-center justify-center gap-4">
-            <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0">
-              <img
-                src="/images/chef3_opengraph.png"
-                alt="Erin Motlow"
-                className="w-full h-full object-cover scale-110 origin-top-left"
-              />
-            </div>
-            <p className="text-charcoal/60 text-3xl" style={{ fontFamily: "'Dancing Script', cursive" }}>
-              Erin
-            </p>
+          <div className="mt-10 mx-auto w-14 h-14 rounded-full overflow-hidden">
+            <img
+              src="/images/chef3_opengraph.png"
+              alt="Erin Motlow"
+              className="w-full h-full object-cover scale-110 origin-top-left"
+            />
           </div>
 
           <div className="w-12 h-px bg-charcoal/20 mx-auto mt-10" />
