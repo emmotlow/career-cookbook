@@ -220,7 +220,7 @@ export default function RecipeModal({ recipe, onClose }: RecipeModalProps) {
                 </h3>
                 <div className="space-y-4 text-charcoal/75 leading-relaxed">
                   {recipe.personalStory.split('\n\n').map((paragraph, i) => (
-                    <p key={i}>{paragraph}</p>
+                    <p key={i} className="whitespace-pre-line">{paragraph}</p>
                   ))}
                 </div>
               </div>

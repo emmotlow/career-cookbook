@@ -111,7 +111,7 @@ This single event resulted in the global business units rebuilding their roadmap
     dish: 'From Blind Kitchen to Precision Engine',
     image: '/images/yield-optimization.jpg',
     serves: "Entire company (improving net operating margin for company's path to profitability)",
-    prepTime: '5 months',
+    prepTime: '4 months',
     cookTime: '12 months',
     problem: 'Operating blind leads to poor margins and poor team health',
     ingredients: [
@@ -130,9 +130,13 @@ This single event resulted in the global business units rebuilding their roadmap
 
 At the time, we did not have a target utilization formula and our time tracking methodology was basic. The team was operating blind, reacting to whatever customers or internal teams asked.
 
-Here's what I implemented:
+I implemented the following to empower my leadership team to make decisions in the best interest of our customers and team:
 
-A utilization formula to ensure team health. New time tracking methodology to ensure each team member allocated the right amount of time to billable work, non-billable work, and non-utilization. Real-time reporting to course-correct quickly in fast-moving services cycles. Monetized Solutions Engineering: transitioned from free custom builds to a revenue stream that satisfied specific customer needs. Balanced regional customer needs while operating consistently as a global team.`,
+• Utilization methodology with target formulas for all team members (billable, non-billable, non-utilization)
+• Revamped time tracking to ensure target utilization and provide visibility into funded vs. non-funded activities
+• Real-time reporting for fast course-correction in dynamic services cycles
+• Monetized Solutions Engineering by transitioning custom builds from free to revenue-generating
+• First principles management approach (balancing regional customer needs while operating as a cohesive global team)`,
     result: [
       'Stage 1: Achieved 14% increase in positive gross margin for Professional Services',
       'Stage 2: Achieved net zero operating margin across all of Customer Solutions',
