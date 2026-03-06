@@ -43,23 +43,27 @@ export default function Navbar() {
       scrolled ? 'text-charcoal/60' : 'text-cream/70'
     }`;
 
-  const renderLink = (link: typeof navLinks[number], onClick?: () => void) => {
+  const renderLink = (link: typeof navLinks[number], options?: { onClick?: () => void; mobile?: boolean }) => {
+    const cls = options?.mobile
+      ? 'font-sans text-sm tracking-extra-wide uppercase text-cream/80 hover:text-terracotta transition-colors duration-300'
+      : linkClass;
+
     if (link.isPage) {
       return (
-        <Link to={link.href} className={linkClass} onClick={onClick}>
+        <Link to={link.href} className={cls} onClick={options?.onClick}>
           {link.label}
         </Link>
       );
     }
     if (!isHome) {
       return (
-        <Link to={`/${link.href}`} className={linkClass} onClick={onClick}>
+        <Link to={`/${link.href}`} className={cls} onClick={options?.onClick}>
           {link.label}
         </Link>
       );
     }
     return (
-      <a href={link.href} className={linkClass} onClick={onClick}>
+      <a href={link.href} className={cls} onClick={options?.onClick}>
         {link.label}
       </a>
     );
@@ -92,7 +96,7 @@ export default function Navbar() {
           <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.href}>
-                {renderLink(link)}
+                {renderLink(link, {})}
               </li>
             ))}
             <li>
@@ -114,17 +118,17 @@ export default function Navbar() {
           >
             <span
               className={`absolute h-px w-5 transition-all duration-300 ${
-                scrolled ? 'bg-charcoal' : 'bg-cream'
+                mobileOpen ? 'bg-charcoal' : scrolled ? 'bg-charcoal' : 'bg-cream'
               } ${mobileOpen ? 'rotate-45' : '-translate-y-1.5'}`}
             />
             <span
               className={`absolute h-px w-5 transition-all duration-300 ${
-                scrolled ? 'bg-charcoal' : 'bg-cream'
+                mobileOpen ? 'bg-charcoal' : scrolled ? 'bg-charcoal' : 'bg-cream'
               } ${mobileOpen ? 'opacity-0' : 'opacity-100'}`}
             />
             <span
               className={`absolute h-px w-5 transition-all duration-300 ${
-                scrolled ? 'bg-charcoal' : 'bg-cream'
+                mobileOpen ? 'bg-charcoal' : scrolled ? 'bg-charcoal' : 'bg-cream'
               } ${mobileOpen ? '-rotate-45' : 'translate-y-1.5'}`}
             />
           </button>
@@ -149,7 +153,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: i * 0.08 }}
                 >
-                  {renderLink(link, handleLinkClick)}
+                  {renderLink(link, { onClick: handleLinkClick, mobile: true })}
                 </motion.li>
               ))}
               <motion.li
